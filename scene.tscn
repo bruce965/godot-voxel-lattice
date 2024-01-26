@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqh7ydhw2bo30"]
+
+[ext_resource type="Shader" path="res://voxel.gdshader" id="1_3uwd2"]
+[ext_resource type="NoiseTexture3D" uid="uid://8dadsv6qkl6x" path="res://Voxels/caves16.tres" id="2_apeh7"]
+[ext_resource type="Script" path="res://voxel.gd" id="3_rq2fr"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8738t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0s5ch"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_3uwd2")
+shader_parameter/voxels = ExtResource("2_apeh7")
+
+[node name="Scene" type="Node3D"]
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 1, 1.1, 1.4)
+visible = false
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.766044, -0.55667, 0.321394, 0, 0.5, 0.866026, -0.642788, -0.663414, 0.383022, 0, 2, 0)
+shadow_enabled = true
+
+[node name="OmniLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 1.1, 1.1)
+visible = false
+shadow_enabled = true
+
+[node name="Plane" type="MeshInstance3D" parent="."]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 32, 16, 0, 16)
+mesh = SubResource("PlaneMesh_8738t")
+
+[node name="Voxel" type="MeshInstance3D" parent="."]
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 32, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_0s5ch")
+script = ExtResource("3_rq2fr")
+voxels = ExtResource("2_apeh7")

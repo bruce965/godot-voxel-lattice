@@ -1,0 +1,22 @@
+[gd_resource type="NoiseTexture3D" load_steps=3 format=3 uid="uid://8dadsv6qkl6x"]
+
+[sub_resource type="Gradient" id="Gradient_ghqw1"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.424051)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wfh2j"]
+noise_type = 0
+frequency = 0.2
+offset = Vector3(7.5, 7.5, 7.5)
+fractal_type = 0
+cellular_jitter = 0.0
+cellular_return_type = 6
+metadata/_preview_in_3d_space_ = true
+
+[resource]
+width = 16
+height = 16
+depth = 16
+invert = true
+color_ramp = SubResource("Gradient_ghqw1")
+noise = SubResource("FastNoiseLite_wfh2j")
