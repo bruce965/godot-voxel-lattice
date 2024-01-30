@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Voxel Global Lattice"
-run/main_scene="res://~scene_old.tscn"
+run/main_scene="res://scene.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.png"
 

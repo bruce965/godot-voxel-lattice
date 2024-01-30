@@ -15,7 +15,7 @@ shader_parameter/voxels = ExtResource("2_apeh7")
 [node name="Scene" type="Node3D"]
 
 [node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 1, 1.1, 1.4)
+transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 32, 35, 45)
 visible = false
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
